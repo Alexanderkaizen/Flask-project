@@ -22,15 +22,15 @@ def user(name = None, edad = None):
 @app.route('/calculadora/<operation>/<int:num1>/<int:num2>/<int:num3>')
 def calculadora(num1,num2,num3,operation):
     if operation == "suma":
-        return f" {num1 + num2 + num3}"
+        return f" La suma de como resultado: {num1 + num2 + num3}"
     elif operation == "resta":
-        return f" {num1 - num2 - num3}"
+        return f" La resta da como resultado: {num1 - num2 - num3}"
     elif operation == "multiplicacion":
-        return f" {num1 * num2  *num3}"
+        return f" La multiplicacion da como resultado: {num1 * num2  *num3}"
     elif operation == "divicion":
-        return f" {num1 / num2 / num3}"
+        return f" La divicion de como resultado: {num1 / num2 / num3}"
     elif operation == "elevado":
-        return f" {num1 ** num2 **num3}"
+        return f" La elevacion da como resultado: {num1 ** num2 **num3}"
     
         
 
