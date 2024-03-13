@@ -9,9 +9,9 @@ def hello():
     return "<h1>Hello, World!</h1>" 
 
 # Esto imprime tu nombre y edad
-
+@app.route('/user/<name>')   
 @app.route('/user/<name>/<int:edad>')   
-def user(name, edad):
+def user(name = None, edad = None): 
     if edad == None:
         return f"<h1>Bienvenido user {name}</h1>" 
     else:
@@ -19,16 +19,20 @@ def user(name, edad):
     
 # Esto es una calculadora basica
 
-@app.route('/calculadora/<int:num1>/<operation>/<int:num2>')
-def operation(num1,num2,operation):
-    if operation == "+":
-        return f" {num1 + num2}"
-    elif operation == "-":
-        return f" {num1 - num2}"
-    elif operation == "*":
-        return f" {num1 * num2}"
-    elif operation == "div":
-        return f" {num1 // num2}"
+@app.route('/calculadora/<operation>/<int:num1>/<int:num2>/<int:num3>')
+def calculadora(num1,num2,num3,operation):
+    if operation == "suma":
+        return f" {num1 + num2 + num3}"
+    elif operation == "resta":
+        return f" {num1 - num2 - num3}"
+    elif operation == "multiplicacion":
+        return f" {num1 * num2  *num3}"
+    elif operation == "divicion":
+        return f" {num1 / num2 / num3}"
+    elif operation == "elevado":
+        return f" {num1 ** num2 **num3}"
+    
+        
 
 #Login 
 
